@@ -1,0 +1,36 @@
+SELECT C.Name, O.OrderID, O.Amount
+FROM Customers C
+INNER JOIN Orders O ON C.CustomerID = O.CustomerID;
+SELECT C.Name, O.OrderID, O.Amount
+FROM Customers C
+LEFT JOIN Orders O ON C.CustomerID = O.CustomerID;
+SELECT C.Name, O.OrderID, O.Amount
+FROM Customers C
+RIGHT JOIN Orders O ON C.CustomerID = O.CustomerID;
+SELECT C.Name, O.OrderID, O.Amount
+FROM Customers C
+FULL OUTER JOIN Orders O ON C.CustomerID = O.CustomerID;
+
+SELECT C.*
+FROM Customers C
+LEFT JOIN Orders O ON C.CustomerID = O.CustomerID
+WHERE O.CustomerID IS NULL;
+SELECT O.*
+FROM Orders O
+LEFT JOIN Customers C ON C.CustomerID = O.CustomerID
+WHERE C.CustomerID IS NULL;
+SELECT C.Name, COUNT(O.OrderID) AS TotalOrders
+FROM Customers C
+LEFT JOIN Orders O ON C.CustomerID = O.CustomerID
+GROUP BY C.Name;
+SELECT C.Name, SUM(O.Amount) AS TotalSpent
+FROM Customers C
+LEFT JOIN Orders O ON C.CustomerID = O.CustomerID
+GROUP BY C.Name;
+SELECT O.OrderID, O.OrderDate, O.Amount, C.City
+FROM Orders O
+INNER JOIN Customers C ON C.CustomerID = O.CustomerID;
+SELECT C.Name, O.Amount
+FROM Customers C
+LEFT JOIN Orders O ON C.CustomerID = O.CustomerID
+ORDER BY O.Amount DESC;
