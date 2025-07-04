@@ -1,0 +1,13 @@
+Customers
+INSERT INTO Customers VALUES
+(1, 'Alice', 'New York'),
+(2, 'Bob', 'Los Angeles'),
+(3, 'Charlie', 'Chicago'),
+(4, 'Diana', 'Miami');
+
+-- Orders
+INSERT INTO Orders VALUES
+(101, '2025-07-01', 1, 250.00),
+(102, '2025-07-02', 1, 300.00),
+(103, '2025-07-03', 2, 150.00),
+(104, '2025-07-03', 5, 500.00);
